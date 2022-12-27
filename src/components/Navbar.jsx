@@ -14,7 +14,7 @@ const Container = styled.nav`
     align-items: center;
     justify-content: space-between;
     padding: 0rem 5rem;
-    background-color: #303841;
+    background-color: #262626;
 `
 
 const LogoContainer = styled.div`
