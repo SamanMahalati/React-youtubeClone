@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 //fetch channel videos data
 import fetchChannelVideos from '../redux/channelVideos/channelVideosAction';
+import Loading from '../shared/Loading';
 
 //Components
 import NewVideo from './NewVideo';
@@ -12,12 +13,14 @@ import NewVideo from './NewVideo';
 const Container = styled.section`
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     height: 100vh;
     overflow-y: scroll;
     padding: 2rem;
     background-color: #404040;
     gap: 1rem;
+    flex-grow: 1;
 `
 
 
@@ -33,7 +36,7 @@ const NewVideos = () => {
         <Container>
             {
                 channelVideosState.loading ?
-                    <h1>Loading...</h1> :
+                    <Loading/> :
                     channelVideosState.channelVideos.items ?
                     channelVideosState.channelVideos.items.map(video => <NewVideo key={video.id.videoId ? video.id.videoId : null} data={video} />) : null
             }

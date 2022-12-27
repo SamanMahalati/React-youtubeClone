@@ -13,8 +13,8 @@ import Store from "./redux/store";
 const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
+  background-color: #404040;
 `
 
 function App() {
