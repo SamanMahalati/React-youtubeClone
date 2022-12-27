@@ -1,4 +1,5 @@
-import LogoImg from "../images/LOGO.png"
+//import Logo
+import LogoImg from "../images/Logo.png"
 
 //Import Icon 
 import PodcastsIcon from '@mui/icons-material/Podcasts';
@@ -10,7 +11,6 @@ import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import HomeIcon from '@mui/icons-material/Home';
-import SearchIcon from '@mui/icons-material/Search';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 //Logo
@@ -27,6 +27,7 @@ export const Categories = [
     {name: "Podcast" , icon: <PodcastsIcon/> } ,
     {name: "Movie" , icon: <SlideshowIcon/> } ,
     {name: "Gaming" , icon: <SportsEsportsIcon/> } ,
+    {name: "Live" , icon: <LiveTvIcon/> } ,
     {name: "Fitness" , icon: <FitnessCenterIcon/> } ,
 ]
 
