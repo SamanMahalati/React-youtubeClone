@@ -24,7 +24,11 @@ const fetchChannelVideos = () => {
 
     const options = {
         params: {
-            maxResults: '50'
+            q: 'music',
+            part: 'snippet,id',
+            regionCode: 'US',
+            maxResults: '50',
+            order: 'date'
         },
         headers: {
             'X-RapidAPI-Key': 'f9f9ecc392msh91f6c728660d109p1721dfjsn4d81472f4b07',
@@ -34,13 +38,13 @@ const fetchChannelVideos = () => {
 
     return (dispatch) => {
         dispatch(channelVideosRequest())
-        axios.get(`https://youtube-v31.p.rapidapi.com/search` , options)
+        axios.get(`https://youtube-v31.p.rapidapi.com/search`, options)
 
             .then(response => {
                 const data = response.data
                 dispatch(channelVideosSuccess(data))
             })
-            
+
             .catch(error => {
                 const errorMsg = error.message
                 dispatch(channelVideosEreor(errorMsg))

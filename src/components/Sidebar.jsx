@@ -8,8 +8,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 10rem;
-    max-width: 20rem;
+    min-width: 17rem;
+    max-width: 30rem;
     background-color: #404040;
     height: 100vh;
     gap: 1rem;
@@ -50,7 +50,7 @@ const Sidebar = () => {
         <Container>
             {
                 Categories.map(Categorie => 
-                    <SideBarItem>
+                    <SideBarItem key={Categorie.name}>
                         <SideBarIcon>{Categorie.icon}</SideBarIcon>
                         <SideBarName>{Categorie.name}</SideBarName>
                     </SideBarItem>
