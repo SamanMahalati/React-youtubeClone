@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useSelector, useDispatch } from "react-redux"
 
 import { Categories } from '../utils/constants';
+
+import fetchChannelVideos from '../redux/channelVideos/channelVideosAction';
 
 //Styles
 const Container = styled.div`
@@ -46,11 +49,24 @@ const SideBarName = styled.span`
 
 
 const Sidebar = () => {
+
+    const dispatch = useDispatch()
+    const channelVideoState = useSelector(state => state.channelVideosState)
+
+
+    const [categorieName, setCategorieName] = useState("music")
+
+    useEffect(() => {
+        dispatch(fetchChannelVideos(categorieName))
+    } , [categorieName])
+
+
+
     return (
         <Container>
             {
-                Categories.map(Categorie => 
-                    <SideBarItem key={Categorie.name}>
+                Categories.map(Categorie =>
+                    <SideBarItem onClick={() => setCategorieName(Categorie.name)} key={Categorie.name}>
                         <SideBarIcon>{Categorie.icon}</SideBarIcon>
                         <SideBarName>{Categorie.name}</SideBarName>
                     </SideBarItem>

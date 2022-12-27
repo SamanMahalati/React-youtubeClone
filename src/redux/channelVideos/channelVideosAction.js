@@ -20,11 +20,11 @@ const channelVideosEreor = error => {
     }
 }
 
-const fetchChannelVideos = () => {
+const fetchChannelVideos = (categories) => {
 
     const options = {
         params: {
-            q: 'music',
+            q: categories,
             part: 'snippet,id',
             regionCode: 'US',
             maxResults: '50',
