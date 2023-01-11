@@ -12,6 +12,14 @@ import LiveTvIcon from '@mui/icons-material/LiveTv';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import HomeIcon from '@mui/icons-material/Home';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import ForumIcon from '@mui/icons-material/Forum';
+
+export const CheckIcon = CheckCircleIcon
+export const LikeIcon = ThumbUpIcon
+export const ViweIcon = VisibilityIcon
+export const CommentIcon = ForumIcon
 
 //Logo
 export const Logo = LogoImg

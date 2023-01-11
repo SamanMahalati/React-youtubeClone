@@ -1,31 +1,24 @@
 import { Provider } from "react-redux"
 
-//Style
-import styled from "styled-components";
-
 //Components
-import { Navbar, Sidebar, NewVideo } from "./components";
+import { Navbar, VideoDetails , Home } from "./components";
+import ErrorPage from "./shared/ErrorPage";
 
 //Redux Store
 import Store from "./redux/store";
 
-//Styles
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background-color: #404040;
-`
+import { Routes, Route, Navigate } from "react-router-dom"
 
 function App() {
   return (
     <Provider store={Store}>
       <div className="App">
         <Navbar />
-        <Container>
-          <Sidebar />
-          <NewVideo />
-        </Container>
+          <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/video/:id" element={<VideoDetails />} />
+            <Route path="/error" element={<ErrorPage />} />
+          </Routes>
       </div>
     </Provider>
   );

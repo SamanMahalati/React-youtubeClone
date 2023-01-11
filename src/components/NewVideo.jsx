@@ -1,5 +1,11 @@
 import React from 'react';
+import { Skeleton } from '@mui/material';
+
+//Styles
 import styled from 'styled-components';
+
+//React Router Dom
+import { Link } from 'react-router-dom';
 
 const Card = styled.div`
     overflow: hidden;
@@ -43,16 +49,35 @@ const ChannelName = styled.h5`
 
 const NewVideo = ({ data }) => {
     return (
-        <Card>
-            {console.log(data.snippet)}
-            <VidoeImageContainer>
-                <img src={data.snippet.thumbnails.medium.url} alt="" />
-            </VidoeImageContainer>
-            <VideoContentContainer>
-                <VideoTitle>{data.snippet.title}</VideoTitle>
-                <ChannelName>{data.snippet.channelTitle}</ChannelName>
-            </VideoContentContainer>
-        </Card>
+        <Link to={`/video/${data.id.videoId}`} style={{ color: "#fff", textDecoration: "none" }}>
+            <Card>
+                <VidoeImageContainer>
+                    {
+                        data.snippet.thumbnails.medium.url ?
+                            <img src={data.snippet.thumbnails.medium.url} alt="video" loading='lazy'/>
+                            :
+                            <>
+                                <Skeleton variant="rounded" width={"100%"} height={"13rem"} sx={{ padding: "1rem 4rem", margin: "0 auto", bgcolor: "gray.300" }} animation="wave" />
+                                <br />
+                            </>
+                    }
+                </VidoeImageContainer>
+                <VideoContentContainer>
+                    {
+                        data.snippet.title ?
+                            <VideoTitle>{data.snippet.title}</VideoTitle>
+                            :
+                            <Skeleton variant="rounded" width={"80%"} height={10} sx={{bgcolor: "gray.300", borderRadius: "3rem" }} animation="wave" />
+                    }
+                    {
+                        data.snippet.channelTitle ?
+                            <ChannelName>{data.snippet.channelTitle}</ChannelName>
+                            :
+                            <Skeleton variant="rounded" width={"30%"} height={10} sx={{ bgcolor: "gray.300", borderRadius: "3rem" }} animation="wave" />
+                    }
+                </VideoContentContainer>
+            </Card>
+        </Link>
     );
 };
 
