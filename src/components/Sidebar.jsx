@@ -14,7 +14,7 @@ const Container = styled.div`
     min-width: 17rem;
     max-width: 30rem;
     background-color: #404040;
-    height: 100vh;
+    height: 100%;
     gap: 1rem;
     padding: 1.5rem 0;
     `

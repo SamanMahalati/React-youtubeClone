@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch  , useSelector} from "react-redux"
+import { useNavigate } from "react-router-dom"
 
 import fetchSearch from '../redux/search/searchAction';
 
@@ -34,12 +35,15 @@ const SearchInput = styled.input`
 `
 
 const SearchBox = () => {
+    const navigate = useNavigate()
+
     const dispatch = useDispatch()
     const searchState = useSelector(state => state.searchState)
     const [search, setSearch] = useState("")
 
     const SearchHandler = () => {
         dispatch(fetchSearch(search))
+        navigate(`/search`)
     }
 
     return (

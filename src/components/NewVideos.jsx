@@ -18,8 +18,6 @@ const Container = styled.section`
     justify-content: center;
     flex-wrap: wrap;
     height: 100vh;
-    overflow-y: scroll;
-    padding: 2rem;
     background-color: #404040;
     gap: 1rem;
     flex-grow: 1;

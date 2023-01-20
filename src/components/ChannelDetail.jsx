@@ -98,7 +98,7 @@ export default function LabTabs() {
         background-color: #fff;
     `
     return (
-        <Box sx={{ width: '100%', typography: 'body3', padding: "0 15rem" }} >
+        <Box sx={{ width: '100%', typography: 'body3'}} >
             <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChange} aria-label="lab API tabs example" centered scrollButtons="auto" sx={{ display: "flex", gap: "2rem"}}>
@@ -125,8 +125,7 @@ export default function LabTabs() {
                                     <div>
                                         <h1>{channelDetailsState?.channelDetail?.items?.[0]?.brandingSettings?.channel?.title}</h1>
                                         <h2>{channelDetailsState?.channelDetail?.items?.[0]?.snippet?.customUrl}</h2>
-                                        <h2>
-                                            <span style={{padding: "0 10px"}}>Subscriber</span>
+                                        <h2>Subscriber
                                             {
                                                 new Intl.NumberFormat().format(channelDetailsState?.channelDetail?.items?.[0]?.statistics?.subscriberCount)
                                             }
