@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: #404040;
+  height: 100%;
 `
 
 const Home = () => {

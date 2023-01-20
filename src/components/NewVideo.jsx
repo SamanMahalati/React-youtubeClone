@@ -54,7 +54,7 @@ const NewVideo = ({ data }) => {
                 <VidoeImageContainer>
                     {
                         data.snippet.thumbnails.medium.url ?
-                            <img src={data.snippet.thumbnails.medium.url} alt="video" loading='lazy'/>
+                            <img src={data.snippet.thumbnails.medium.url} alt="video" style={{backgroundColor: "#202020"}}/>
                             :
                             <>
                                 <Skeleton variant="rounded" width={"100%"} height={"13rem"} sx={{ padding: "1rem 4rem", margin: "0 auto", bgcolor: "gray.300" }} animation="wave" />

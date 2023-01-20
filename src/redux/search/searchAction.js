@@ -1,34 +1,35 @@
 import axios from "axios"
 
-const channelVideosRequest = () => {
+const searchRequest = () => {
     return {
-        type: "CHANNEL_VIDEOS_REQUEST"
+        type: "SEARCH_REQUEST"
     }
 }
 
-const channelVideosSuccess = channelVideos => {
+const searchSuccess = Search => {
     return {
-        type: "CHANNEL_VIDEOS_SUCCESS",
-        payload: channelVideos
+        type: "SEARCH_SUCCESS",
+        payload: Search
     }
 }
 
-const channelVideosEreor = error => {
+const searchError = error => {
     return {
-        type: "CHANNEL_VIDEOS_ERROR",
+        type: "SEARCH_ERROR",
         payload: error
     }
 }
 
-const fetchChannelVideos = (categories) => {
+const fetchSearch = (search) => {
 
     const options = {
         method: 'GET',
         params: {
-            channelId: categories,
+            q: search,
             part: 'snippet,id',
-            order: 'date',
-            maxResults: '50'
+            regionCode: 'US',
+            maxResults: '50',
+            order: 'date'
         },
         headers: {
             'X-RapidAPI-Key': 'f9f9ecc392msh91f6c728660d109p1721dfjsn4d81472f4b07',
@@ -37,19 +38,19 @@ const fetchChannelVideos = (categories) => {
     };
 
     return (dispatch) => {
-        dispatch(channelVideosRequest())
+        dispatch(searchRequest())
         axios.get(`https://youtube-v31.p.rapidapi.com/search`, options)
 
             .then(response => {
                 const data = response.data
-                dispatch(channelVideosSuccess(data))
+                dispatch(searchSuccess(data))
             })
 
             .catch(error => {
                 const errorMsg = error.message
-                dispatch(channelVideosEreor(errorMsg))
+                dispatch(searchError(errorMsg))
             });
     }
 }
 
-export default fetchChannelVideos
+export default fetchSearch

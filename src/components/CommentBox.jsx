@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Avatar } from '@mui/material';
+
+//Icon
+import { ThumbGoodIcon, ThumbBadIcon } from '../utils/constants';
 
 //Style
 import styled from 'styled-components';
@@ -28,7 +31,36 @@ const CommentContent = styled.div`
     }
 `
 
+const CommentLike = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem 0 0 0;
+`
+
 const CommentBox = ({ comments }) => {
+
+    const [like, setLike] = useState(comments?.snippet?.topLevelComment?.snippet?.likeCount)
+    const [isLike, setIsLike] = useState(false)
+    
+
+    const UnlikeComment = () => {
+        if (!isLike) {
+            return like
+        } else {
+            setLike(() => like - 1)
+            setIsLike(false)
+        }
+    }
+
+    const LikeComment = () => {
+        if (isLike) {
+            return like
+        } else {
+            setLike(() => like + 1)
+            setIsLike(true)
+        }
+    }
 
     return (
         <Container>
@@ -38,6 +70,11 @@ const CommentBox = ({ comments }) => {
                     <CommentContent>
                         <h3>{comments?.snippet?.topLevelComment?.snippet?.authorDisplayName}</h3>
                         <h4>{comments?.snippet?.topLevelComment?.snippet?.textDisplay}</h4>
+                        <CommentLike>
+                            <ThumbBadIcon onClick={UnlikeComment} style={{ cursor: "pointer" }} />
+                            <span>{like}</span>
+                            <ThumbGoodIcon onClick={LikeComment} style={{ cursor: "pointer" }} />
+                        </CommentLike>
                     </CommentContent>
                 </>
             }

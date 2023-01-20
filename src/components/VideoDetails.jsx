@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Avatar, Skeleton } from '@mui/material';
 
 //Components
 import CommentBox from './CommentBox';
-import ErrorPage from '../shared/ErrorPage';
 
 import { useSelector, useDispatch } from "react-redux"
 
@@ -179,12 +178,14 @@ const VideoDetails = () => {
                                         <VideoTitle>{videoState.channelVideo?.items?.[0]?.snippet?.title}</VideoTitle>
                                 }
                                 <ChannelNameContainer>
+                                    <Link to={`/channel/${videoState.channelVideo?.items?.[0]?.snippet?.channelId}`}>
                                     {
                                         videoState.loading ?
-                                            <>
+                                        <>
                                                 <Skeleton variant="circular" sx={{ bgcolor: "grey.800" }} animation="wave">
                                                     <Avatar />
                                                 </Skeleton>
+                                                <br />
                                                 <Skeleton animation="wave" variant="rectangular" width={250} height={12} sx={{ bgcolor: "grey.800" }} />
                                             </>
                                             :
@@ -193,6 +194,7 @@ const VideoDetails = () => {
                                                 <ChannelTitle>{videoState.channelVideo?.items?.[0]?.snippet?.channelTitle}</ChannelTitle>
                                             </>
                                     }
+                                    </Link>
                                 </ChannelNameContainer>
                                 <VideoView>
                                     {
@@ -248,7 +250,7 @@ const VideoDetails = () => {
                                             :
                                             <>
                                                 <CommentIcon />
-                                                <CommentTitle>Comments</CommentTitle>
+                                                <CommentTitle>{commentState.videoComments?.items?.length} Comments</CommentTitle>
                                             </>
                                     }
                                 </CommentTitleContainer>

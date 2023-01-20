@@ -1,7 +1,7 @@
 import { Provider } from "react-redux"
 
 //Components
-import { Navbar, VideoDetails , Home } from "./components";
+import { Navbar, VideoDetails , Home , ChannelDetail } from "./components";
 import ErrorPage from "./shared/ErrorPage";
 
 //Redux Store
@@ -17,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/video/:id" element={<VideoDetails />} />
+            <Route path="/channel/:id" element={<ChannelDetail />} />
             <Route path="/error" element={<ErrorPage />} />
           </Routes>
       </div>

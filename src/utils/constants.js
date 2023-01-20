@@ -15,11 +15,15 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ForumIcon from '@mui/icons-material/Forum';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 
 export const CheckIcon = CheckCircleIcon
 export const LikeIcon = ThumbUpIcon
 export const ViweIcon = VisibilityIcon
 export const CommentIcon = ForumIcon
+export const ThumbGoodIcon = ThumbUpOffAltIcon
+export const ThumbBadIcon = ThumbDownOffAltIcon
 
 //Logo
 export const Logo = LogoImg

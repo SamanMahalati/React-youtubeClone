@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { useDispatch } from "react-redux"
+import { useDispatch  , useSelector} from "react-redux"
 
-import fetchChannelVideos from '../redux/channelVideos/channelVideosAction';
+import fetchSearch from '../redux/search/searchAction';
 
 //Icons
 import SearchIcon from '@mui/icons-material/Search';
@@ -35,14 +35,16 @@ const SearchInput = styled.input`
 
 const SearchBox = () => {
     const dispatch = useDispatch()
+    const searchState = useSelector(state => state.searchState)
     const [search, setSearch] = useState("")
 
     const SearchHandler = () => {
-        dispatch(fetchChannelVideos(search))
+        dispatch(fetchSearch(search))
     }
 
     return (
         <Container>
+            {console.log(searchState)}
             <SearchInput onChange={event => setSearch(event.target.value)} on value={search} type="text" placeholder='Search...' />
             <div onClick={SearchHandler}>
                 <SearchIcon sx={{ color: "#CA3E47" }} />
