@@ -1,10 +1,7 @@
 import React from 'react';
 
-//Style
-import styled from "styled-components";
-
 //Components
-import { NewVideo, Sidebar } from '.';
+import { NewVideo} from '.';
 
 const Home = () => {
     return (

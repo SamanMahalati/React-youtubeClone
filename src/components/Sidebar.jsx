@@ -16,7 +16,6 @@ const Container = styled.div`
     background-color: #404040;
     height: 100%;
     gap: 1rem;
-    padding: 1.5rem 0;
     `
 
 const SideBarItem = styled.div`

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useDispatch  , useSelector} from "react-redux"
 import { useNavigate } from "react-router-dom"
 
-import fetchSearch from '../redux/search/searchAction';
+//functions
+import refreshPage from '../functions/RefreshPage';
 
 //Icons
 import SearchIcon from '@mui/icons-material/Search';
@@ -36,19 +36,17 @@ const SearchInput = styled.input`
 
 const SearchBox = () => {
     const navigate = useNavigate()
-
-    const dispatch = useDispatch()
-    const searchState = useSelector(state => state.searchState)
-    const [search, setSearch] = useState("")
-
+    const [search, setSearch] = useState("")   
+    
     const SearchHandler = () => {
-        dispatch(fetchSearch(search))
-        navigate(`/search`)
+        navigate(`/search/${search}`)
+        refreshPage()
+        setSearch("")
     }
 
     return (
         <Container>
-            {console.log(searchState)}
+            {console.log(search)}
             <SearchInput onChange={event => setSearch(event.target.value)} on value={search} type="text" placeholder='Search...' />
             <div onClick={SearchHandler}>
                 <SearchIcon sx={{ color: "#CA3E47" }} />

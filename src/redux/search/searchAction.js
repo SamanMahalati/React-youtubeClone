@@ -24,13 +24,7 @@ const fetchSearch = (search) => {
 
     const options = {
         method: 'GET',
-        params: {
-            q: search,
-            part: 'snippet,id',
-            regionCode: 'US',
-            maxResults: '50',
-            order: 'date'
-        },
+        params: { q: search, part: ' snippet,id', maxResults: '100' },
         headers: {
             'X-RapidAPI-Key': 'f9f9ecc392msh91f6c728660d109p1721dfjsn4d81472f4b07',
             'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'

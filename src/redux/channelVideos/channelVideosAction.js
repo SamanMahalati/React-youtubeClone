@@ -31,7 +31,7 @@ const fetchChannelVideos = (categories) => {
             maxResults: '50'
         },
         headers: {
-            'X-RapidAPI-Key': 'f9f9ecc392msh91f6c728660d109p1721dfjsn4d81472f4b07',
+            'X-RapidAPI-Key': '7aca16caa9msh8138c95a99fd0f5p1ce837jsn888f3e41793b',
             'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
         }
     };
