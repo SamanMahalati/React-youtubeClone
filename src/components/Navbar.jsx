@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
 
-//images
-import { Logo } from '../utils/constants';
-
-
 //Components
 import SearchBox from '../shared/SearchBox';
 
@@ -17,18 +13,9 @@ const Container = styled.nav`
     background-color: #262626;
 `
 
-const LogoContainer = styled.div`
-    img {
-        height: 7rem;
-    }
-`
-
 const Navbar = () => {
     return (
         <Container>
-            <LogoContainer>
-                <img src={Logo} alt="Logo" />
-            </LogoContainer>
             <SearchBox/>
         </Container>
     );

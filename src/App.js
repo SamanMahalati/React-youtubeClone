@@ -16,10 +16,10 @@ function App() {
   return (
     <Provider store={Store}>
       <div className="App">
-        <Navbar />
         <section className="main">
           <Sidebar />
           <div className="routes">
+            <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/video/:id" element={<VideoDetails />} />

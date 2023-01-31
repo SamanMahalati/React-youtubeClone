@@ -17,6 +17,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import ForumIcon from '@mui/icons-material/Forum';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
+import MenuIcon from '@mui/icons-material/Segment';
 
 export const CheckIcon = CheckCircleIcon
 export const LikeIcon = ThumbUpIcon
@@ -24,6 +25,7 @@ export const ViweIcon = VisibilityIcon
 export const CommentIcon = ForumIcon
 export const ThumbGoodIcon = ThumbUpOffAltIcon
 export const ThumbBadIcon = ThumbDownOffAltIcon
+export const Menu = MenuIcon
 
 //Logo
 export const Logo = LogoImg

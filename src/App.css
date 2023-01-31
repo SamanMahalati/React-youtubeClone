@@ -1,11 +1,11 @@
 .main {
     display: flex;
     overflow: hidden;
-    padding: 2rem 0;
 }
 
 .routes {
     height: 100vh;
     width: 100%;
     overflow-y: scroll;
+    background-color: #15141b;
 }
