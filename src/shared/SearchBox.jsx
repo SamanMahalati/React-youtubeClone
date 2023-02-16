@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom"
 import refreshPage from '../functions/RefreshPage';
 
 //Icons
-import SearchIcon from '@mui/icons-material/Search';
+import { VoiceIcon, SearchIcon } from "../utils/constants"
 
 //Styles
 const Container = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #fff;
+    background-color: #1f1e25;
     border-radius: 3rem;
     padding: 0 1rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -26,18 +26,20 @@ const Container = styled.div`
 `
 
 const SearchInput = styled.input`
-    height: 3rem;
-    width: 23rem;
+    height: 3.5rem;
+    width: 20rem;
     padding: 1rem;
     border-radius: 3rem;
     font-size: 16px;
-    caret-color: #CA3E47;
+    caret-color: #ffc831;
+    color: #fff;
+    background-color: transparent;
 `
 
 const SearchBox = () => {
     const navigate = useNavigate()
-    const [search, setSearch] = useState("")   
-    
+    const [search, setSearch] = useState("")
+
     const SearchHandler = () => {
         navigate(`/search/${search}`)
         refreshPage()
@@ -46,11 +48,11 @@ const SearchBox = () => {
 
     return (
         <Container>
-            {console.log(search)}
-            <SearchInput onChange={event => setSearch(event.target.value)} on value={search} type="text" placeholder='Search...' />
             <div onClick={SearchHandler}>
-                <SearchIcon sx={{ color: "#CA3E47" }} />
+                <SearchIcon sx={{ color: "#fff" }} />
             </div>
+            <SearchInput onChange={event => setSearch(event.target.value)} value={search} type="text" placeholder='Search...' />
+            <VoiceIcon sx={{ color: "#504f56", cursor: "pointer" }} />
         </Container>
     );
 };

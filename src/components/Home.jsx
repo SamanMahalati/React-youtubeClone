@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Components
-import { NewVideo} from '.';
+import { NewVideo } from '.';
 
 const Home = () => {
     return (

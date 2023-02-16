@@ -1,5 +1,6 @@
 .main {
     display: flex;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -8,4 +9,5 @@
     width: 100%;
     overflow-y: scroll;
     background-color: #15141b;
+    padding: 2rem 4rem 0 4rem;
 }

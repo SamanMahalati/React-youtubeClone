@@ -1,6 +1,8 @@
 //import Logo
 import LogoImg from "../images/Logo.png"
 
+import User from "../images/User.jpg"
+
 //Import Icon 
 import PodcastsIcon from '@mui/icons-material/Podcasts';
 import CodeIcon from '@mui/icons-material/Code';
@@ -18,6 +20,11 @@ import ForumIcon from '@mui/icons-material/Forum';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import MenuIcon from '@mui/icons-material/Segment';
+import KeyboardVoiceTwoToneIcon from '@mui/icons-material/KeyboardVoiceTwoTone';
+import VideoCallTwoToneIcon from '@mui/icons-material/VideoCallTwoTone';
+import MessagesIcon from '@mui/icons-material/ForumTwoTone';
+import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
+import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 
 export const CheckIcon = CheckCircleIcon
 export const LikeIcon = ThumbUpIcon
@@ -26,9 +33,16 @@ export const CommentIcon = ForumIcon
 export const ThumbGoodIcon = ThumbUpOffAltIcon
 export const ThumbBadIcon = ThumbDownOffAltIcon
 export const Menu = MenuIcon
+export const VoiceIcon = KeyboardVoiceTwoToneIcon
+export const CameraIcon = VideoCallTwoToneIcon
+export const MessageIcon = MessagesIcon
+export const NotificationsIcon = NotificationsNoneTwoToneIcon
+export const SearchIcon = SearchTwoToneIcon
 
 //Logo
 export const Logo = LogoImg
+
+export const UserImg = User
 
 //Categories List
 export const Categories = [
